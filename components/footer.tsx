@@ -87,25 +87,26 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-[#0b0b0f] to-[#141417] text-gray-300 pt-20 pb-10 px-6 md:px-20 relative overflow-hidden">
+    <footer className="bg-gradient-to-b from-[#0b0b0f] to-[#141417] text-gray-300 pt-20 pb-10 px-6 sm:px-10 md:px-20 relative overflow-hidden">
       {/* Subtle top glow */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-60"></div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
+      {/* Main Grid */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 sm:gap-20 text-center md:text-left">
         {/* Brand Info */}
-        <div className="flex flex-col items-center md:items-start">
-          <h2 className="text-3xl font-extrabold text-white mb-4 tracking-wide">
+        <div className="flex flex-col items-center md:items-start space-y-4">
+          <h2 className="text-3xl font-extrabold text-white tracking-wide">
             Ember<span className="text-orange-500">Craft</span>
           </h2>
-          <p className="text-gray-400 max-w-sm">
+          <p className="text-gray-400 max-w-sm leading-relaxed">
             A collective of visual creators crafting cinematic stories through
             design and motion. Every project, a spark of emotion.
           </p>
         </div>
 
         {/* Quick Links */}
-        <div>
-          <h3 className="text-white font-semibold text-lg mb-5 uppercase tracking-wide">
+        <div className="space-y-4">
+          <h3 className="text-white font-semibold text-lg uppercase tracking-wide">
             Explore
           </h3>
           <ul className="space-y-3 text-base">
@@ -117,7 +118,7 @@ const Footer = () => {
               "FAQ",
               "Contact",
             ].map((link, i) => (
-              <li key={i} className="group inline-block md:block">
+              <li key={i} className="group block sm:inline-block md:block">
                 <a
                   href={`#${link.toLowerCase()}`}
                   className="relative hover:text-orange-500 transition-colors duration-300"
@@ -131,11 +132,11 @@ const Footer = () => {
         </div>
 
         {/* Connect Section */}
-        <div>
-          <h3 className="text-white font-semibold text-lg mb-5 uppercase tracking-wide">
+        <div className="space-y-4">
+          <h3 className="text-white font-semibold text-lg uppercase tracking-wide">
             Connect
           </h3>
-          <div className="flex justify-center md:justify-start space-x-4">
+          <div className="flex justify-center md:justify-start flex-wrap gap-4">
             {[FaInstagram, FaFacebookF, FaTwitter, FaBehance, FaYoutube].map(
               (Icon, i) => (
                 <a
