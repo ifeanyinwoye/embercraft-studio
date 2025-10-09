@@ -76,6 +76,7 @@
 
 // export default Footer;
 
+import Link from "next/link";
 import React from "react";
 import {
   FaFacebookF,
@@ -119,13 +120,13 @@ const Footer = () => {
               "Contact",
             ].map((link, i) => (
               <li key={i} className="group block sm:inline-block md:block">
-                <a
-                  href={`#${link.toLowerCase()}`}
+                <Link
+                  href={`${link.toLowerCase()}`}
                   className="relative hover:text-orange-500 transition-colors duration-300"
                 >
                   {link}
                   <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
