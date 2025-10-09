@@ -85,7 +85,7 @@ export default function Portfolio() {
     <>
       <Navbar />
       {/* Hero */}
-      <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-b from-[#0a0a0e] via-[#141417] to-[#0a0a0e] text-white">
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-b from-[#0a0a0e] via-[#141417] to-[#0a0a0e] text-white">
         {/* Subtle moving glow */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,100,0,0.15)_0%,transparent_70%)] animate-pulse-slow"></div>
 
