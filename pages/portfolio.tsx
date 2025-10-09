@@ -63,9 +63,18 @@ const projects = [
   },
 ];
 
+interface Project {
+  id: number;
+  title: string;
+  category: string;
+  client: string;
+  description: string;
+  image: string;
+}
+
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const filteredProjects =
     selectedCategory === "All"
