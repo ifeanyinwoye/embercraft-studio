@@ -1,10 +1,10 @@
-import Hero from "@/components/hero";
+import Hero from "../components/hero";
 import Navbar from "../components/navbar";
-import Intro from "@/components/intro";
-import ProjectShowcase from "@/components/projectsShowCase";
-import QuickLinks from "@/components/quickLinks";
-import TestimonialSection from "@/components/testimonialSection";
-import Footer from "@/components/footer";
+import Intro from "../components/intro";
+import ProjectShowcase from "../components/projectsShowCase";
+import QuickLinks from "../components/quickLinks";
+import TestimonialSection from "../components/testimonialSection";
+import Footer from "../components/footer";
 
 export default function Home() {
   return (

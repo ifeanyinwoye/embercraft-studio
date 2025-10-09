@@ -59,36 +59,63 @@
 //   );
 // }
 
+"use client";
+
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const navItems = [
+    "About",
+    "Portfolio",
+    "Services",
+    "Pricing",
+    "FAQ",
+    "Contact",
+  ];
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/10 shadow-[0_0_25px_rgba(255,100,0,0.1)] transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="text-3xl font-extrabold text-white tracking-tight">
-          Ember<span className="text-orange-500">Craft</span>
+          <Link href="/">
+            Ember<span className="text-orange-500">Craft</span>
+          </Link>
         </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-10">
-          {["About", "Portfolio", "Services", "Pricing", "FAQ", "Contact"].map(
-            (item) => (
-              <a
+          {navItems.map((item) => {
+            const route = `/${item.toLowerCase()}`;
+            const isActive = pathname === route;
+
+            return (
+              <Link
                 key={item}
-                href={`#${item.toLowerCase()}`}
-                className="relative text-gray-300 hover:text-orange-500 font-medium tracking-wide transition-colors duration-300 group"
+                href={route}
+                className={`relative font-medium tracking-wide transition-colors duration-300 group ${
+                  isActive
+                    ? "text-orange-500"
+                    : "text-gray-300 hover:text-orange-500"
+                }`}
               >
                 {item}
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            )
-          )}
+                <span
+                  className={`absolute left-0 bottom-0 h-[2px] bg-orange-500 transition-all duration-300 ${
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                ></span>
+              </Link>
+            );
+          })}
         </div>
 
         {/* Mobile Toggle */}
@@ -108,24 +135,26 @@ export default function Navbar() {
       >
         <div className="bg-[#0b0b0f]/95 backdrop-blur-lg border-t border-white/10 shadow-lg">
           <div className="flex flex-col items-start px-8 py-6 space-y-5">
-            {[
-              "About",
-              "Portfolio",
-              "Services",
-              "Pricing",
-              "FAQ",
-              "Contact",
-            ].map((item, i) => (
-              <a
-                key={i}
-                href={`#${item.toLowerCase()}`}
-                onClick={() => setIsOpen(false)}
-                className="text-gray-300 hover:text-orange-500 text-lg font-medium transition-all duration-300"
-                style={{ animationDelay: `${i * 0.1}s` }}
-              >
-                {item}
-              </a>
-            ))}
+            {navItems.map((item, i) => {
+              const route = `/${item.toLowerCase()}`;
+              const isActive = pathname === route;
+
+              return (
+                <Link
+                  key={i}
+                  href={route}
+                  onClick={() => setIsOpen(false)}
+                  className={`text-lg font-medium transition-all duration-300 ${
+                    isActive
+                      ? "text-orange-500"
+                      : "text-gray-300 hover:text-orange-500"
+                  }`}
+                  style={{ animationDelay: `${i * 0.1}s` }}
+                >
+                  {item}
+                </Link>
+              );
+            })}
 
             <button className="mt-4 px-6 py-2 bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold rounded-full shadow-[0_0_15px_rgba(255,100,0,0.3)] hover:scale-105 transition-transform duration-300">
               Let’s Get Started
