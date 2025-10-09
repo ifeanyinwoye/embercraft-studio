@@ -67,17 +67,17 @@ const links = [
   {
     title: "About Us",
     desc: "Learn more about who we are and our creative philosophy.",
-    href: "#about",
+    href: "/about",
   },
   {
     title: "Portfolio",
     desc: "See our best photography and design works in action.",
-    href: "#portfolio",
+    href: "/portfolio",
   },
   {
     title: "Contact",
     desc: "Let’s collaborate to bring your vision to life.",
-    href: "#contact",
+    href: "/contact",
   },
 ];
 

@@ -281,7 +281,7 @@ export default function about() {
           ))}
         </div>
 
-        {/* Content */}
+        {/* Contact */}
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
