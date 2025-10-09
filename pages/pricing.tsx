@@ -117,7 +117,7 @@ export default function Pricing() {
             transition={{ duration: 1 }}
             className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6"
           >
-            Creativity Within Your Reach —{" "}
+            Creativity Within Your Reach — <br />
             <span className="text-orange-500">Priced to Inspire.</span>
           </motion.h1>
 
@@ -147,7 +147,7 @@ export default function Pricing() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl font-bold text-white"
           >
-            🔥 Our Creative Packages
+            Our Creative Packages
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -208,7 +208,7 @@ export default function Pricing() {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-bold text-white"
           >
-            🎬 Why Choose <span className="text-orange-400">EmberCraft</span>?
+            Why Choose <span className="text-orange-400">EmberCraft</span>?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

@@ -82,7 +82,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/10 shadow-[0_0_25px_rgba(255,100,0,0.1)] transition-all duration-300">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur-md border-b border-white/10 shadow-[0_0_25px_rgba(255,100,0,0.1)] transition-all duration-300 ">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="text-3xl font-extrabold text-white tracking-tight">
@@ -155,10 +155,6 @@ export default function Navbar() {
                 </Link>
               );
             })}
-
-            <button className="mt-4 px-6 py-2 bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold rounded-full shadow-[0_0_15px_rgba(255,100,0,0.3)] hover:scale-105 transition-transform duration-300">
-              Let’s Get Started
-            </button>
           </div>
         </div>
       </div>

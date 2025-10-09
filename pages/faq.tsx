@@ -44,24 +44,39 @@ export default function FAQ() {
   return (
     <>
       <Navbar />
-      <main className="bg-gradient-to-b from-[#0a0a0a] via-black to-[#111] text-white min-h-screen pt-28 pb-24">
+      <main className="bg-gradient-to-b from-[#0a0a0a] via-black to-[#111] text-white min-h-screen pt-16 pb-24">
         {/* Hero Section */}
-        <section className="relative flex flex-col items-center justify-center text-center px-6 mb-20 min-h-[60vh] overflow-hidden">
-          {/* Animated Gradient Glow */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,100,0,0.15),transparent_75%)] animate-pulse-slow" />
+        <section className="relative min-h-screen text-center px-6 mb-20 overflow-hidden">
+          {/* Gradient and glow background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#120808] to-black" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,100,0,0.12),transparent_70%)]" />
 
-          {/* Soft moving gradient layer */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#141414]/40 to-[#0a0a0a] opacity-80" />
+          {/* Floating ember particles */}
+          <div className="absolute inset-0">
+            {[...Array(30)].map((_, i) => (
+              <span
+                key={i}
+                className="absolute bg-orange-500 rounded-full opacity-20 animate-pulse"
+                style={{
+                  width: `${Math.random() * 3 + 1}px`,
+                  height: `${Math.random() * 3 + 1}px`,
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 5}s`,
+                }}
+              />
+            ))}
+          </div>
 
-          {/* Hero Text */}
+          {/* Content */}
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="relative z-10 text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-4"
+            transition={{ duration: 0.7 }}
+            className="relative text-5xl md:text-6xl font-extrabold z-10 mt-40"
           >
             Got{" "}
-            <span className="text-orange-500 drop-shadow-[0_0_10px_rgba(255,100,0,0.5)]">
+            <span className="text-orange-500 drop-shadow-[0_0_10px_rgba(255,100,0,0.8)]">
               Questions
             </span>
             ?
@@ -70,16 +85,15 @@ export default function FAQ() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 1 }}
-            className="relative z-10 text-gray-400 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed"
+            transition={{ delay: 0.2, duration: 0.7 }}
+            className="relative text-gray-300 mt-6 max-w-3xl mx-auto text-lg z-10 leading-relaxed"
           >
             We’ve compiled some of the most common inquiries to help you
-            understand how we craft emotion through design, storytelling, and
-            visuals.
+            understand how we craft emotion through{" "}
+            <span className="text-orange-400">design</span>,
+            <span className="text-orange-400"> storytelling</span>, and
+            <span className="text-orange-400"> visuals</span>.
           </motion.p>
-
-          {/* Bottom glow for cinematic depth */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-orange-500/20 blur-[140px]" />
         </section>
 
         {/* FAQ Section */}
