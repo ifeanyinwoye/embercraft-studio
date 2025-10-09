@@ -104,7 +104,7 @@ export default function Intro() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="#portfolio"
+            href="/portfolio"
             className="inline-block mt-6 bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg transition-all"
           >
             See Our Work

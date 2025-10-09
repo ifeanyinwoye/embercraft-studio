@@ -10,6 +10,8 @@
 //           className="w-full h-full object-cover"
 //         />
 
+import Link from "next/link";
+
 //         {/* Option 2 (replace above img): Video Background */}
 //         {/* <video
 //           src="/videos/hero.mp4"
@@ -68,12 +70,12 @@ export default function Hero() {
           EmberCraft Studio brings your ideas to life through photography and
           design — blending creativity with emotion.
         </p>
-        <a
-          href="#portfolio"
+        <Link
+          href="/portfolio"
           className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105"
         >
           View Our Work
-        </a>
+        </Link>
       </div>
     </section>
   );
